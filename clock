@@ -1,0 +1,13 @@
+import tkinter as tk
+from time import strftime
+def update_time():
+    string_time = strftime('%H:%M:%S %p')
+    digital_clock.config(text=string_time)
+    digital_clock.after(100, update_time)
+root = tk.Tk()
+root.title("simple Clock")
+digital_clock = tk.Label(root, font=('calibri', 50, 'bold'), background='black', foreground='maroon')
+digital_clock.pack(pady=30)
+update_time()
+root.mainloop()
+
